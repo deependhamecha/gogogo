@@ -87,7 +87,7 @@ func main() {
 	var scanit int
 
 	fmt.Print("\n Enter a Number:")
-	fmt.Scan(&scanit)
+	// fmt.Scan(&scanit)
 
 	fmt.Println("scanit: ",scanit)
 
@@ -121,7 +121,33 @@ func main() {
 	*w = 10
 	fmt.Println("*w : ", *w)
 	fmt.Println("u : ", u)
+
+	fmt.Println("----------------")
+	g:=5
+	with_params(&g)
+	fmt.Println(g)
+
+	ra:='A'
+
+	fmt.Println(ra)
+
+	r:=`aaad
+	dasfafaf
+	dfd`
+
+	fmt.Println(r)
+
+	fmt.Println(rune(ra))
+
+	fmt.Printf("%T\n", rune(ra))
+	fmt.Printf("%T\n", ra)
+
+	// It converts rune into String
+	fmt.Println("Hello"+string(65));
+
+	fmt.Println("----------------")
 }
+
 
 
 
@@ -129,4 +155,9 @@ func dud() {
 	fmt.Println("Harry Potter")
 }
 
+func with_params(x *int) {
+	*x=0
+}
 
+
+// When a package is imported, the package name becomes an accessor for the contents.
