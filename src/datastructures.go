@@ -102,6 +102,15 @@ func main() {
 
 	_,e := return2Values()
 	fmt.Println(e)
+
+	// Another way of declaring and initializing map
+	k := map[string]int{"key1": 5, "key2": 6}
+	fmt.Println("Another way : ", k);
+
+	// Delete something from map
+	// Notice map is a reference so assigning isnt necessary
+	delete(k, "key2")
+	fmt.Println("After deleting : ", k);
 }
 
 
