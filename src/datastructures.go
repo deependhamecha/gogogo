@@ -35,6 +35,7 @@ func main() {
 	// Now there are 2 things: length which we regularly use in other languages and there is another thing called capacity
 	// By Default if you dont specify capacity then its same as length
 	// However, if you want to specify then you do it via make() method
+	// make() declares and initializes as well
 
 	s:=make([]int, 5, 100)
 
@@ -111,6 +112,17 @@ func main() {
 	// Notice map is a reference so assigning isnt necessary
 	delete(k, "key2")
 	fmt.Println("After deleting : ", k);
+
+	var h1 map[string]int
+	// same as
+	h2 := map[string]int{}
+	fmt.Println("h1: ", h1 == nil)
+	fmt.Println("h2: ", h2 == nil)
+
+	// when you fetch the element, it returns 2 return values
+	if val, exists := k["key1"]; exists {
+		fmt.Println(val)
+	}
 }
 
 
