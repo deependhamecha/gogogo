@@ -123,6 +123,18 @@ func main() {
 	if val, exists := k["key1"]; exists {
 		fmt.Println(val)
 	}
+
+	fmt.Println("---------------")
+
+	// Multi dim maps
+	y:= map[int]map[int]string{
+		0: map[int]string{
+			0: "Dude",
+		}, // Comma is important
+	}
+
+	fmt.Println(y)
+
 }
 
 
