@@ -10,6 +10,7 @@ type foo int
 
 
 
+//-------------Inheritance-----------
 //------------------2----------------
 type Person struct {
 	firstName string
@@ -31,17 +32,19 @@ type UserDetail struct {
 
 
 
-//-------------Inheritance-------------
 //-------------Polymorphism------------
 
 func main() {
 
-
 	//----------------1-----------------
 	var myType foo = 5
+	m:= 2
 
-	fmt.Println("myType",myType)
+	fmt.Println("myType: ", myType)
 
+	// Wont work
+	// fmt.Println(myType+m)
+	fmt.Println(int(myType) + m)
 
 
 //---------------2------------------
@@ -66,5 +69,13 @@ func main() {
 
 	fmt.Println("UserDetail:", ud)
 
+	fmt.Println("------------------")
+	fmt.Println("Function Called: ", dude.Person.printPersonName())
 
+
+}
+
+// Only Dude type variable can call this 
+func (d Person) printPersonName() string {
+	return fmt.Sprint(d.firstName+" "+d.lastName)
 }
